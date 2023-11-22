@@ -11,10 +11,11 @@ library AssetBuilder {
     uint cellSize = 30;
     string memory baseSvg = Constants.BASESVG;
 
-    uint x = cellSize + cellSize / 2;
-    uint y = cellSize + cellSize / 2;
 
     for (uint i = 0; i < metadata.traits.length; i++) {
+      uint x = cellSize + cellSize / 2;
+      uint y = i * cellSize + cellSize;
+      // payout token
       string memory newElement = string(
         abi.encodePacked(
           '<text x="', Strings.toString(x), '" y="', Strings.toString(y), '" fill="white">',
