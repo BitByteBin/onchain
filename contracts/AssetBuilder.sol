@@ -15,7 +15,6 @@ library AssetBuilder {
     uint y = cellSize + cellSize / 2;
 
     for (uint i = 0; i < metadata.traits.length; i++) {
-      // payout token
       string memory newElement = string(
         abi.encodePacked(
           '<text x="', Strings.toString(x), '" y="', Strings.toString(y), '" fill="white">',
