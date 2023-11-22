@@ -56,7 +56,8 @@ contract TEST is OnChainTraits {
         Random.random(seed, id, traitValueIds["Shirt"].length)
       ]]),
       MetadataBuilder.Trait(traitTypes[3], traitValues[traitValueIds["Key"][
-        Random.random(seed, id, traitValueIds["Key"].length)
+        // random can also be used with an additional counter
+        Random.random(seed, id, traitValueIds["Key"].length, 420)
       ]])
     ];
   }

@@ -16,7 +16,7 @@ abstract contract OnChainTraits {
   }
 
   function setTraits(Trait[] memory traits) public {
-    for (uint i = 0; i < traits.length; i++) {
+    for (uint i = 0; i < traits.length; ++i) {
       setTraitValues(traits[i].key, traits[i].value);
     }
   }
@@ -24,11 +24,11 @@ abstract contract OnChainTraits {
   function setTraitValues(string memory traitType, string memory traitValue) public {
     if (traitValueIds[traitType].length == 0) {
       traitTypes[traitTypeCount] = traitType;
-      traitTypeCount++;
+      ++traitTypeCount;
     }
 
     traitValueIds[traitType].push(traitValueCount);
     traitValues[traitValueCount] = traitValue;
-    traitValueCount++;
+    ++traitValueCount;
   }
 }

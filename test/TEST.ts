@@ -27,7 +27,8 @@ describe("OnChain Metadata", function () {
           { key: "Hat", value: "Small Hat" },
           { key: "Shoes", value: "No Shoes" },
           { key: "Shirt", value: "No Shirt" },
-          { key: "Key", value: "Big Hat" },
+          { key: "Key", value: "Big Key" },
+          { key: "Key", value: "No Key" }
         ]),
         await test.setTraitValues("Key", "Golden Key"),
       ]);
