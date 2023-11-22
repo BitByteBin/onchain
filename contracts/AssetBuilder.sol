@@ -25,36 +25,6 @@ library AssetBuilder {
       baseSvg = string(abi.encodePacked(baseSvg, newElement));
     }
 
-    /*
-
-    // payout
-    newElement = string(
-      abi.encodePacked(
-        '<text x="', Strings.toString(x), '" y="', Strings.toString(y * 2), '" fill="white">',
-        "payout: ", payout.payout,
-        '</text>'
-    ));
-    baseSvg = string(abi.encodePacked(baseSvg, newElement));
-
-    // start time
-    newElement = string(
-      abi.encodePacked(
-        '<text x="', Strings.toString(x), '" y="', Strings.toString(y * 3), '" fill="white">',
-        "startTime: ", payout.startTime,
-        '</text>'
-    ));
-    baseSvg = string(abi.encodePacked(baseSvg, newElement));
-
-    // end time
-    newElement = string(
-      abi.encodePacked(
-        '<text x="', Strings.toString(x), '" y="', Strings.toString(y * 4), '" fill="white">',
-        "endTime: ", payout.endTime,
-        '</text>'
-    ));
-    baseSvg = string(abi.encodePacked(baseSvg, newElement));
-    */
-
     baseSvg = string(abi.encodePacked(baseSvg, Constants.SVGEND));
 
     return baseSvg;
