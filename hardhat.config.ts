@@ -29,6 +29,7 @@ const config: HardhatUserConfig = {
       clearOnStart: true,
       start: 'echo Running my compilation task now..',
     },
+    // hmmm, why does this fail the second time running in watch
     coverage: {
       tasks: ['coverage'],
       files: ['./contracts'],
@@ -37,14 +38,15 @@ const config: HardhatUserConfig = {
     test: {
       tasks: ['test'],
       files: ['./contracts', './test/**/*'],
-      verbose: true
+      verbose: true,
+      runOnLaunch: true
     },
     ci: {
       tasks: [
         'clean',
-        { command: 'compile', params: { quiet: true } },
-        { command: 'test', params: { noCompile: true, testFiles: ['testfile.ts'] } },
+        { command: 'coverage' },
       ],
+      files: ['./contracts', './test/**/*'],
     },
   },
 };
