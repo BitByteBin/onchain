@@ -4,21 +4,31 @@ pragma solidity ^0.8.20;
 abstract contract OnChainTraits {
   uint public traitTypeCount;
   mapping (uint => string) traitTypes;
-  mapping (string => uint[]) traits;
+  mapping (string => uint[]) traitValueIds;
   uint public traitValueCount;
   mapping (uint => string) traitValues;
 
-  function addTraitType(string calldata traitType) public {
-    if (traits[traitType].length != 0) { revert(); }
-    traitTypes[traitTypeCount] = traitType;
-    traits[traitType].push(traitTypeCount);
-    traitTypeCount++;
+  uint public seed = 42069;
+
+  struct Trait {
+    string key;
+    string value;
   }
 
-  function setTraitValues(string calldata traitType, string calldata traitValue) public {
-    if (traits[traitType].length == 0) { revert(); }
+  function setTraits(Trait[] memory traits) public {
+    for (uint i = 0; i < traits.length; i++) {
+      setTraitValues(traits[i].key, traits[i].value);
+    }
+  }
+
+  function setTraitValues(string memory traitType, string memory traitValue) public {
+    if (traitValueIds[traitType].length == 0) {
+      traitTypes[traitTypeCount] = traitType;
+      traitTypeCount++;
+    }
+
+    traitValueIds[traitType].push(traitValueCount);
     traitValues[traitValueCount] = traitValue;
-    traits[traitType].push(traitValueCount);
     traitValueCount++;
   }
 }

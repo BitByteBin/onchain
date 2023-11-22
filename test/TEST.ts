@@ -7,9 +7,6 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 
 describe("OnChain Metadata", function () {
-  // We define a fixture to reuse the same setup in every test.
-  // We use loadFixture to run this setup once, snapshot that state,
-  // and reset Hardhat Network to that snapshot in every test.
   async function deployFixture() {
     const [owner, otherAccount] = await ethers.getSigners();
 
@@ -23,10 +20,17 @@ describe("OnChain Metadata", function () {
     it("Should set traits and return valid json", async function () {
       const { test, owner } = await loadFixture(deployFixture);
 
-      let setHatTx = await test.addTraitType("Hat");
-      const setHatRecipt = await setHatTx.wait();
-      let setHatValueTx = await test.setTraitValues("Hat", "Big Hat");
-      const setHatValueRecipt = await setHatValueTx.wait();
+      await Promise.all([
+        await test.setTraits([
+          { key: "Hat", value: "Big Hat" },
+          { key: "Hat", value: "No Hat" },
+          { key: "Hat", value: "Small Hat" },
+          { key: "Shoes", value: "No Shoes" },
+          { key: "Shirt", value: "No Shirt" },
+          { key: "Key", value: "Big Hat" },
+        ]),
+        await test.setTraitValues("Key", "Golden Key"),
+      ]);
       let tokenURI = await test.tokenURI(1);
       tokenURI = tokenURI.replace("data:application/json;base64,", "").replaceAll("=", "");
       //console.log(tokenURI);
@@ -36,7 +40,9 @@ describe("OnChain Metadata", function () {
       try {
         let jsonData = JSON.parse(data);
         console.log(jsonData);
-        isValidJson = true;
+        if (jsonData.attributes[0].value == "Big Hat") {
+          isValidJson = true;
+        }
       } catch (e) {
         //console.log(e);
       }

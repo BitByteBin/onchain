@@ -5,6 +5,7 @@ import {MetadataBuilder} from "./MetadataBuilder.sol";
 import {AssetBuilder} from "./AssetBuilder.sol";
 import {Base64Encoder} from "./Base64Encoder.sol";
 import {OnChainTraits} from "./OnChainTraits.sol";
+import {Random} from "./Random.sol";
 
 contract TEST is OnChainTraits {
   string public name;
@@ -45,10 +46,18 @@ contract TEST is OnChainTraits {
   function getTraits(uint id) public view returns (MetadataBuilder.Trait[4] memory) {
     // customize these and get values programatically by id
     return [
-      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]]),
-      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]]),
-      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]]),
-      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]])
+      MetadataBuilder.Trait(traitTypes[0], traitValues[traitValueIds["Hat"][
+        Random.random(seed, id, traitValueIds["Hat"].length)
+      ]]),
+      MetadataBuilder.Trait(traitTypes[1], traitValues[traitValueIds["Shoes"][
+        Random.random(seed, id, traitValueIds["Shoes"].length)
+      ]]),
+      MetadataBuilder.Trait(traitTypes[2], traitValues[traitValueIds["Shirt"][
+        Random.random(seed, id, traitValueIds["Shirt"].length)
+      ]]),
+      MetadataBuilder.Trait(traitTypes[3], traitValues[traitValueIds["Key"][
+        Random.random(seed, id, traitValueIds["Key"].length)
+      ]])
     ];
   }
 }
