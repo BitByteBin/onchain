@@ -4,9 +4,6 @@ pragma solidity ^0.8.20;
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 
 library MetadataBuilder {
-  struct TraitType {
-    string key;
-  }
   struct Trait {
     string key;
     string value;

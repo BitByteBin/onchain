@@ -4,8 +4,9 @@ pragma solidity ^0.8.20;
 import {MetadataBuilder} from "./MetadataBuilder.sol";
 import {AssetBuilder} from "./AssetBuilder.sol";
 import {Base64Encoder} from "./Base64Encoder.sol";
+import {OnChainTraits} from "./OnChainTraits.sol";
 
-contract TEST {
+contract TEST is OnChainTraits {
   string public name;
   string public symbol;
   string public description;
@@ -41,13 +42,13 @@ contract TEST {
         )));
   }
 
-  function getTraits(uint id) public pure returns (MetadataBuilder.Trait[4] memory) {
+  function getTraits(uint id) public view returns (MetadataBuilder.Trait[4] memory) {
     // customize these and get values programatically by id
     return [
-      MetadataBuilder.Trait("Hat", "No Hat"),
-      MetadataBuilder.Trait("Shoes", "No Shoes"),
-      MetadataBuilder.Trait("Shirt", "No Shirt"),
-      MetadataBuilder.Trait("Dice", "No Dice")
+      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]]),
+      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]]),
+      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]]),
+      MetadataBuilder.Trait(traitTypes[0], traitValues[traits["Hat"][0]])
     ];
   }
 }

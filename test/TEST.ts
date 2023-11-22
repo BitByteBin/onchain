@@ -20,9 +20,13 @@ describe("OnChain Metadata", function () {
   }
 
   describe("TokenURI", function () {
-    it("Should return valid encoded json", async function () {
+    it("Should set traits and return valid json", async function () {
       const { test, owner } = await loadFixture(deployFixture);
 
+      let setHatTx = await test.addTraitType("Hat");
+      const setHatRecipt = await setHatTx.wait();
+      let setHatValueTx = await test.setTraitValues("Hat", "Big Hat");
+      const setHatValueRecipt = await setHatValueTx.wait();
       let tokenURI = await test.tokenURI(1);
       tokenURI = tokenURI.replace("data:application/json;base64,", "").replaceAll("=", "");
       //console.log(tokenURI);
@@ -39,5 +43,6 @@ describe("OnChain Metadata", function () {
 
       expect(isValidJson).to.be.true;
     });
+
   });
 });
