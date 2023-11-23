@@ -1,13 +1,11 @@
 import { ethers } from "hardhat";
 import { expect } from "chai";
 
-describe("MinimalTest", function () {
-  describe("TokenURI", function () {
-    it("Should set traits and return valid json", async function () {
+describe("RandomTest", function () {
+  describe("Random functions don't revert", function () {
+    it("Should not revert when calling random functions", async function () {
       const [owner] = await ethers.getSigners();
-
       const RandomTest = await ethers.getContractFactory("RandomTest");
-
       await expect(RandomTest.deploy()).not.to.be.revertedWithoutReason();
     });
   });
