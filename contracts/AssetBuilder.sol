@@ -4,10 +4,10 @@ pragma solidity ^0.8.20;
 import {Constants} from "./Constants.sol";
 import {Base64} from "base64-sol/base64.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
-import {MetadataBuilder} from "./MetadataBuilder.sol";
+import {OnChainDataStructs} from "./OnChainDataStructs.sol";
 
 library AssetBuilder {
-  function buildSvg(MetadataBuilder.Metadata memory metadata) internal pure returns (string memory) {
+  function buildSvg(OnChainDataStructs.Metadata memory metadata) public pure returns (string memory) {
     uint cellSize = 30;
     string memory baseSvg = Constants.BASESVG;
 

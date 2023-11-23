@@ -6,7 +6,7 @@ import {Base64} from "base64-sol/base64.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 
 library Base64Encoder {
-  function encodeMetadata(string memory metadata) internal pure returns (string memory) {
+  function encodeMetadata(string memory metadata) public pure returns (string memory) {
     metadata = Base64.encode(bytes(metadata));
     metadata = string(abi.encodePacked(
       Constants.JSON_URI_PREFIX,

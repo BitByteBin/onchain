@@ -2,19 +2,11 @@
 pragma solidity ^0.8.20;
 
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
+import {OnChainDataStructs} from "./OnChainDataStructs.sol";
 
 library MetadataBuilder {
-  struct Trait {
-    string key;
-    string value;
-  }
-  struct Metadata {
-    string name;
-    string description;
-    Trait[4] traits; // hmm I should change how this project works so I don't have to set things in the lib
-  }
-
-  function buildMetadata(uint id, string memory image, Metadata memory metadata) internal pure returns (string memory) {
+  // should take an array of keys and an array of values instead of metadata.traits so they can be any size
+  function buildMetadata(uint id, string memory image, OnChainDataStructs.Metadata memory metadata) public pure returns (string memory) {
     string memory dataURI = string(abi.encodePacked(
       '{ "name": "', metadata.name, ' #', Strings.toString(id), '",'
       , ' "description": "', metadata.description, '",'
