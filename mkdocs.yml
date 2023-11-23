@@ -8,7 +8,6 @@ nav:
     - RandomTest: ./test/RandomTest.md
   - Libs:
     - AssetBuilder: ./libs/AssetBuilder.md
-    - AssetBuilder: ./libs/AssetBuilder.md
     - MetadataBuilder: ./libs/MetadataBuilder.md
     - Base64Encoder: ./libs/Base64Encoder.md
     - Random: ./libs/Random.md
