@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
-import {OnChainTraits} from "./OnChainTraits.sol";
+import {OnChainTraits} from "../OnChainTraits.sol";
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract ERC721oc is OnChainTraits, Ownable, ERC721 {

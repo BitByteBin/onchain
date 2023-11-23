@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
-import {MetadataBuilder} from "./MetadataBuilder.sol";
-import {AssetBuilder} from "./AssetBuilder.sol";
-import {Base64Encoder} from "./Base64Encoder.sol";
-import {Random} from "./Random.sol";
-import {OnChainDataStructs} from "./OnChainDataStructs.sol";
+import {MetadataBuilder} from "./libs/MetadataBuilder.sol";
+import {AssetBuilder} from "./libs/AssetBuilder.sol";
+import {Base64Encoder} from "./libs/Base64Encoder.sol";
+import {Random} from "./libs/Random.sol";
+import {OnChainDataStructs} from "./libs/OnChainDataStructs.sol";
 
 abstract contract OnChainTraits {
   uint public traitTypeCount;
