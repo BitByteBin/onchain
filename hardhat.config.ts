@@ -4,6 +4,7 @@ import "hardhat-gas-reporter";
 import 'hardhat-docgen';
 import "@solarity/hardhat-markup";
 import 'hardhat-watcher';
+import '@primitivefi/hardhat-dodoc';
 require("dotenv").config();
 
 const config: HardhatUserConfig = {
@@ -52,6 +53,9 @@ const config: HardhatUserConfig = {
   docgen: {
     path: './docs',
     clear: true,
+    runOnCompile: true,
+  },
+  dodoc: {
     runOnCompile: true,
   }
 };
