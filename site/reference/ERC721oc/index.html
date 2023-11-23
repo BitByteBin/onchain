@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>ERC721oc - OnChain</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ERC721oc";
+        var mkdocs_page_input_path = "reference/ERC721oc.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OnChain
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OnChainTraits/">OnChainTraits</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">ERC721oc</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_name">_name</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_symbol">_symbol</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_1">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approve">approve</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#balanceof">balanceOf</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_2">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description">description</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_3">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getapproved">getApproved</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_4">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getimage">getImage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_5">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#getmetadata">getMetadata</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_6">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gettraits">getTraits</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_5">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_7">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isapprovedforall">isApprovedForAll</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_6">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_8">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#name">name</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_9">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#owner">owner</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_10">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ownerof">ownerOf</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_7">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_11">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#renounceownership">renounceOwnership</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reveal">reveal</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_8">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#safetransferfrom">safeTransferFrom</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_9">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#safetransferfrom_1">safeTransferFrom</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_10">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seed">seed</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_12">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setapprovalforall">setApprovalForAll</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_11">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#settraits">setTraits</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_12">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supportsinterface">supportsInterface</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_13">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_13">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#symbol">symbol</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_14">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tokenuri">tokenURI</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_14">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_15">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#traittypecount">traitTypeCount</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_16">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#traitvaluecount">traitValueCount</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#returns_17">Returns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transferfrom">transferFrom</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_15">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transferownership">transferOwnership</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_16">Parameters</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#events">Events</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#approval">Approval</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_17">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approvalforall">ApprovalForAll</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_18">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ownershiptransferred">OwnershipTransferred</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_19">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transfer">Transfer</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_20">Parameters</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721incorrectowner">ERC721IncorrectOwner</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_21">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721insufficientapproval">ERC721InsufficientApproval</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_22">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721invalidapprover">ERC721InvalidApprover</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_23">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721invalidoperator">ERC721InvalidOperator</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_24">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721invalidowner">ERC721InvalidOwner</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_25">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721invalidreceiver">ERC721InvalidReceiver</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_26">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721invalidsender">ERC721InvalidSender</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_27">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#erc721nonexistenttoken">ERC721NonexistentToken</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_28">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ownableinvalidowner">OwnableInvalidOwner</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_29">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ownableunauthorizedaccount">OwnableUnauthorizedAccount</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_30">Parameters</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../test/MinimalTest/">MinimalTest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../test/RandomTest/">RandomTest</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Libs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/AssetBuilder/">AssetBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/AssetBuilder/">AssetBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/MetadataBuilder/">MetadataBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/Base64Encoder/">Base64Encoder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/Random/">Random</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/Constants/">Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/OnChainDataStructs/">OnChainDataStructs</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OnChain</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">ERC721oc</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="erc721oc">ERC721oc</h1>
+<p><em>0xstabby.eth</em></p>
+<blockquote>
+<p>ERC721oc</p>
+</blockquote>
+<p>ERC721 OnChainTraits implementation</p>
+<h2 id="methods">Methods</h2>
+<h3 id="_name">_name</h3>
+<pre><code class="language-solidity">function _name() external view returns (string)
+</code></pre>
+<h4 id="returns">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_symbol">_symbol</h3>
+<pre><code class="language-solidity">function _symbol() external view returns (string)
+</code></pre>
+<h4 id="returns_1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="approve">approve</h3>
+<pre><code class="language-solidity">function approve(address to, uint256 tokenId) external nonpayable
+</code></pre>
+<p><em>See {IERC721-approve}.</em></p>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>to</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="balanceof">balanceOf</h3>
+<pre><code class="language-solidity">function balanceOf(address owner) external view returns (uint256)
+</code></pre>
+<p><em>See {IERC721-balanceOf}.</em></p>
+<h4 id="parameters_1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_2">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="description">description</h3>
+<pre><code class="language-solidity">function description() external view returns (string)
+</code></pre>
+<h4 id="returns_3">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getapproved">getApproved</h3>
+<pre><code class="language-solidity">function getApproved(uint256 tokenId) external view returns (address)
+</code></pre>
+<p><em>See {IERC721-getApproved}.</em></p>
+<h4 id="parameters_2">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_4">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getimage">getImage</h3>
+<pre><code class="language-solidity">function getImage(uint256 id) external view returns (string)
+</code></pre>
+<p>Get image</p>
+<p><em>Can be overridden</em></p>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>To get image for</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_5">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>String of base64 encoded svg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getmetadata">getMetadata</h3>
+<pre><code class="language-solidity">function getMetadata(uint256 id) external view returns (string)
+</code></pre>
+<p>Get metadata for id</p>
+<p><em>Can be overridden</em></p>
+<h4 id="parameters_4">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>To grab metadata for</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_6">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>String of base64 encoded metadata</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gettraits">getTraits</h3>
+<pre><code class="language-solidity">function getTraits(uint256 id) external view returns (struct OnChainDataStructs.Trait[])
+</code></pre>
+<p>Get traits for id</p>
+<p><em>Can be overridden</em></p>
+<h4 id="parameters_5">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>To grab traits for</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_7">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>OnChainDataStructs.Trait[]</td>
+<td>Array of Traits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="isapprovedforall">isApprovedForAll</h3>
+<pre><code class="language-solidity">function isApprovedForAll(address owner, address operator) external view returns (bool)
+</code></pre>
+<p><em>See {IERC721-isApprovedForAll}.</em></p>
+<h4 id="parameters_6">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>operator</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_8">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>bool</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="name">name</h3>
+<pre><code class="language-solidity">function name() external view returns (string)
+</code></pre>
+<p><em>See {IERC721Metadata-name}.</em></p>
+<h4 id="returns_9">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="owner">owner</h3>
+<pre><code class="language-solidity">function owner() external view returns (address)
+</code></pre>
+<p><em>Returns the address of the current owner.</em></p>
+<h4 id="returns_10">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ownerof">ownerOf</h3>
+<pre><code class="language-solidity">function ownerOf(uint256 tokenId) external view returns (address)
+</code></pre>
+<p><em>See {IERC721-ownerOf}.</em></p>
+<h4 id="parameters_7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_11">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="renounceownership">renounceOwnership</h3>
+<pre><code class="language-solidity">function renounceOwnership() external nonpayable
+</code></pre>
+<p><em>Leaves the contract without owner. It will not be possible to call <code>onlyOwner</code> functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.</em></p>
+<h3 id="reveal">reveal</h3>
+<pre><code class="language-solidity">function reveal(uint256 _seed) external nonpayable
+</code></pre>
+<p>Reveal function with seed</p>
+<h4 id="parameters_8">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_seed</td>
+<td>uint256</td>
+<td>To initialize metadata with</td>
+</tr>
+</tbody>
+</table>
+<h3 id="safetransferfrom">safeTransferFrom</h3>
+<pre><code class="language-solidity">function safeTransferFrom(address from, address to, uint256 tokenId) external nonpayable
+</code></pre>
+<p><em>See {IERC721-safeTransferFrom}.</em></p>
+<h4 id="parameters_9">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>to</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="safetransferfrom_1">safeTransferFrom</h3>
+<pre><code class="language-solidity">function safeTransferFrom(address from, address to, uint256 tokenId, bytes data) external nonpayable
+</code></pre>
+<p><em>See {IERC721-safeTransferFrom}.</em></p>
+<h4 id="parameters_10">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>to</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>data</td>
+<td>bytes</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="seed">seed</h3>
+<pre><code class="language-solidity">function seed() external view returns (uint256)
+</code></pre>
+<h4 id="returns_12">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setapprovalforall">setApprovalForAll</h3>
+<pre><code class="language-solidity">function setApprovalForAll(address operator, bool approved) external nonpayable
+</code></pre>
+<p><em>See {IERC721-setApprovalForAll}.</em></p>
+<h4 id="parameters_11">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>approved</td>
+<td>bool</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="settraits">setTraits</h3>
+<pre><code class="language-solidity">function setTraits(OnChainDataStructs.Trait[] traits) external nonpayable
+</code></pre>
+<h4 id="parameters_12">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>traits</td>
+<td>OnChainDataStructs.Trait[]</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supportsinterface">supportsInterface</h3>
+<pre><code class="language-solidity">function supportsInterface(bytes4 interfaceId) external view returns (bool)
+</code></pre>
+<p><em>See {IERC165-supportsInterface}.</em></p>
+<h4 id="parameters_13">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interfaceId</td>
+<td>bytes4</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_13">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>bool</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="symbol">symbol</h3>
+<pre><code class="language-solidity">function symbol() external view returns (string)
+</code></pre>
+<p><em>See {IERC721Metadata-symbol}.</em></p>
+<h4 id="returns_14">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokenuri">tokenURI</h3>
+<pre><code class="language-solidity">function tokenURI(uint256 id) external view returns (string)
+</code></pre>
+<p>TokenURI returns base64URI metadata with a base64URI image</p>
+<h4 id="parameters_14">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>uint256</td>
+<td>Of ERC721</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_15">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>string</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traittypecount">traitTypeCount</h3>
+<pre><code class="language-solidity">function traitTypeCount() external view returns (uint256)
+</code></pre>
+<h4 id="returns_16">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="traitvaluecount">traitValueCount</h3>
+<pre><code class="language-solidity">function traitValueCount() external view returns (uint256)
+</code></pre>
+<h4 id="returns_17">Returns</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_0</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transferfrom">transferFrom</h3>
+<pre><code class="language-solidity">function transferFrom(address from, address to, uint256 tokenId) external nonpayable
+</code></pre>
+<p><em>See {IERC721-transferFrom}.</em></p>
+<h4 id="parameters_15">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>to</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transferownership">transferOwnership</h3>
+<pre><code class="language-solidity">function transferOwnership(address newOwner) external nonpayable
+</code></pre>
+<p><em>Transfers ownership of the contract to a new account (<code>newOwner</code>). Can only be called by the current owner.</em></p>
+<h4 id="parameters_16">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>newOwner</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<h3 id="approval">Approval</h3>
+<pre><code class="language-solidity">event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId)
+</code></pre>
+<p><em>Emitted when <code>owner</code> enables <code>approved</code> to manage the <code>tokenId</code> token.</em></p>
+<h4 id="parameters_17">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>approved <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>tokenId <code>indexed</code></td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="approvalforall">ApprovalForAll</h3>
+<pre><code class="language-solidity">event ApprovalForAll(address indexed owner, address indexed operator, bool approved)
+</code></pre>
+<p><em>Emitted when <code>owner</code> enables or disables (<code>approved</code>) <code>operator</code> to manage all of its assets.</em></p>
+<h4 id="parameters_18">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>operator <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>approved</td>
+<td>bool</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ownershiptransferred">OwnershipTransferred</h3>
+<pre><code class="language-solidity">event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+</code></pre>
+<h4 id="parameters_19">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>previousOwner <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>newOwner <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transfer">Transfer</h3>
+<pre><code class="language-solidity">event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)
+</code></pre>
+<p><em>Emitted when <code>tokenId</code> token is transferred from <code>from</code> to <code>to</code>.</em></p>
+<h4 id="parameters_20">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>to <code>indexed</code></td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>tokenId <code>indexed</code></td>
+<td>uint256</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h2 id="errors">Errors</h2>
+<h3 id="erc721incorrectowner">ERC721IncorrectOwner</h3>
+<pre><code class="language-solidity">error ERC721IncorrectOwner(address sender, uint256 tokenId, address owner)
+</code></pre>
+<p><em>Indicates an error related to the ownership over a particular token. Used in transfers.</em></p>
+<h4 id="parameters_21">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sender</td>
+<td>address</td>
+<td>Address whose tokens are being transferred.</td>
+</tr>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>Identifier number of a token.</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>Address of the current owner of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721insufficientapproval">ERC721InsufficientApproval</h3>
+<pre><code class="language-solidity">error ERC721InsufficientApproval(address operator, uint256 tokenId)
+</code></pre>
+<p><em>Indicates a failure with the <code>operator</code>’s approval. Used in transfers.</em></p>
+<h4 id="parameters_22">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>address</td>
+<td>Address that may be allowed to operate on tokens without being their owner.</td>
+</tr>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>Identifier number of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidapprover">ERC721InvalidApprover</h3>
+<pre><code class="language-solidity">error ERC721InvalidApprover(address approver)
+</code></pre>
+<p><em>Indicates a failure with the <code>approver</code> of a token to be approved. Used in approvals.</em></p>
+<h4 id="parameters_23">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>approver</td>
+<td>address</td>
+<td>Address initiating an approval operation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidoperator">ERC721InvalidOperator</h3>
+<pre><code class="language-solidity">error ERC721InvalidOperator(address operator)
+</code></pre>
+<p><em>Indicates a failure with the <code>operator</code> to be approved. Used in approvals.</em></p>
+<h4 id="parameters_24">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operator</td>
+<td>address</td>
+<td>Address that may be allowed to operate on tokens without being their owner.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidowner">ERC721InvalidOwner</h3>
+<pre><code class="language-solidity">error ERC721InvalidOwner(address owner)
+</code></pre>
+<p><em>Indicates that an address can&#39;t be an owner. For example, <code>address(0)</code> is a forbidden owner in EIP-20. Used in balance queries.</em></p>
+<h4 id="parameters_25">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>Address of the current owner of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidreceiver">ERC721InvalidReceiver</h3>
+<pre><code class="language-solidity">error ERC721InvalidReceiver(address receiver)
+</code></pre>
+<p><em>Indicates a failure with the token <code>receiver</code>. Used in transfers.</em></p>
+<h4 id="parameters_26">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>receiver</td>
+<td>address</td>
+<td>Address to which tokens are being transferred.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidsender">ERC721InvalidSender</h3>
+<pre><code class="language-solidity">error ERC721InvalidSender(address sender)
+</code></pre>
+<p><em>Indicates a failure with the token <code>sender</code>. Used in transfers.</em></p>
+<h4 id="parameters_27">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sender</td>
+<td>address</td>
+<td>Address whose tokens are being transferred.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721nonexistenttoken">ERC721NonexistentToken</h3>
+<pre><code class="language-solidity">error ERC721NonexistentToken(uint256 tokenId)
+</code></pre>
+<p><em>Indicates a <code>tokenId</code> whose <code>owner</code> is the zero address.</em></p>
+<h4 id="parameters_28">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenId</td>
+<td>uint256</td>
+<td>Identifier number of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ownableinvalidowner">OwnableInvalidOwner</h3>
+<pre><code class="language-solidity">error OwnableInvalidOwner(address owner)
+</code></pre>
+<p><em>The owner is not a valid owner account. (eg. <code>address(0)</code>)</em></p>
+<h4 id="parameters_29">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ownableunauthorizedaccount">OwnableUnauthorizedAccount</h3>
+<pre><code class="language-solidity">error OwnableUnauthorizedAccount(address account)
+</code></pre>
+<p><em>The caller account is not authorized to perform an operation.</em></p>
+<h4 id="parameters_30">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>address</td>
+<td>undefined</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../OnChainTraits/" class="btn btn-neutral float-left" title="OnChainTraits"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../test/MinimalTest/" class="btn btn-neutral float-right" title="MinimalTest">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../OnChainTraits/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../test/MinimalTest/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
