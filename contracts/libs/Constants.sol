@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
+/// @title Constants
+/// @author 0xstabby.eth
+/// @notice Lib for constants needed in base64 prefixing and SVG building
 library Constants {
   //string constant BASESVG = '<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" viewBox="0 -0.5 64 64" width="64" height="64" xmlns:v="https://vecta.io/nano" style="background-color:black;" font-size="20">';
   string constant BASESVG = '<svg xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" xmlns:v="https://vecta.io/nano" style="background-color:black;" font-size="20">';

@@ -4,8 +4,15 @@ pragma solidity ^0.8.20;
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 import {OnChainDataStructs} from "./OnChainDataStructs.sol";
 
+/// @title MetadataBuilder
+/// @author 0xstabby.eth
+/// @notice Lib for building on-chain metadata
 library MetadataBuilder {
-  // should take an array of keys and an array of values instead of metadata.traits so they can be any size
+  /// @notice Build metadata string for id with image and metadata
+  /// @param id To build metadata for
+  /// @param image To insert in metadata string
+  /// @param metadata To insert in metadata string
+  /// @return String of metadata
   function buildMetadata(uint id, string memory image, OnChainDataStructs.Metadata memory metadata) internal pure returns (string memory) {
     string memory dataURI = string(abi.encodePacked(
       '{ "name": "', metadata.name, ' #', Strings.toString(id), '",'
@@ -27,4 +34,3 @@ library MetadataBuilder {
     return dataURI;
   }
 }
-

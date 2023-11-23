@@ -5,6 +5,9 @@ import {Constants} from "./Constants.sol";
 import {Base64} from "base64-sol/base64.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 
+/// @title Base64Encoder
+/// @author 0xstabby.eth
+/// @notice Lib for base64 encoding and prefixing
 library Base64Encoder {
   function encodeMetadata(string memory metadata) internal pure returns (string memory) {
     metadata = Base64.encode(bytes(metadata));

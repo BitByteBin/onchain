@@ -6,7 +6,13 @@ import {Base64} from "base64-sol/base64.sol";
 import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 import {OnChainDataStructs} from "./OnChainDataStructs.sol";
 
+/// @title AssetBuilder
+/// @author 0xstabby.eth
+/// @notice Lib for building on-chain images
 library AssetBuilder {
+  /// @notice Build SVG for metadata
+  /// @param metadata Metadata to build svg for
+  /// @return String of svg
   function buildSvg(OnChainDataStructs.Metadata memory metadata) internal pure returns (string memory) {
     uint cellSize = 30;
     string memory baseSvg = Constants.BASESVG;

@@ -5,6 +5,9 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 import {OnChainTraits} from "../OnChainTraits.sol";
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+/// @title ERC721oc
+/// @author 0xstabby.eth
+/// @notice ERC721 OnChainTraits implementation
 contract ERC721oc is OnChainTraits, Ownable, ERC721 {
   constructor(string memory name, string memory symbol, string memory description)
   Ownable(msg.sender) ERC721(name, symbol)

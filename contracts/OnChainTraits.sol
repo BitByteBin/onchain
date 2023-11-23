@@ -7,6 +7,10 @@ import {Base64Encoder} from "./libs/Base64Encoder.sol";
 import {Random} from "./libs/Random.sol";
 import {OnChainDataStructs} from "./libs/OnChainDataStructs.sol";
 
+/// @title OnChain Traits
+/// @author 0xstabby.eth
+/// @notice Inherit from this abstract to use on-chain metadata
+/// @dev Just setTraits, and return getMetadata from tokenURI in implementation
 abstract contract OnChainTraits {
   uint public traitTypeCount;
   mapping (uint => string) traitTypes;
@@ -29,12 +33,17 @@ abstract contract OnChainTraits {
     description = description_;
   }
 
+  /// @notice Setup traits and values
+  /// @param traits Array of traits to setup
   function setTraits(OnChainDataStructs.Trait[] memory traits) public {
     for (uint i = 0; i < traits.length; ++i) {
       setTraitValues(traits[i].key, traits[i].value);
     }
   }
 
+  /// @notice Set individual trait with value
+  /// @param traitType Type of Trait to set
+  /// @param traitValue Value of Trait to set
   function setTraitValues(string memory traitType, string memory traitValue) internal {
     if (!init) {
       init = true;
@@ -53,7 +62,11 @@ abstract contract OnChainTraits {
     ++traitValueCount;
   }
 
-  function getTraits(uint id) public view returns (OnChainDataStructs.Trait[] memory) {
+  /// @notice Get traits for id
+  /// @param id To grab traits for
+  /// @dev Can be overridden
+  /// @return Array of Traits
+  function getTraits(uint id) public virtual view returns (OnChainDataStructs.Trait[] memory) {
     // this is currently still wrong, returning all traits instead of just one per slot
     OnChainDataStructs.Trait[] memory result = new OnChainDataStructs.Trait[](traitTypeCount);
     for (uint i = 1; i < traitTypeCount; ++i) {
@@ -65,6 +78,10 @@ abstract contract OnChainTraits {
     return result;
   }
 
+  /// @notice Get metadata for id
+  /// @param id To grab metadata for
+  /// @dev Can be overridden
+  /// @return String of base64 encoded metadata
   function getMetadata(uint id) public virtual view returns (string memory) {
     return Base64Encoder.encodeMetadata(
       MetadataBuilder.buildMetadata(
@@ -76,6 +93,10 @@ abstract contract OnChainTraits {
         )));
   }
 
+  /// @notice Get image
+  /// @param id To get image for
+  /// @dev Can be overridden
+  /// @return String of base64 encoded svg
   function getImage(uint id) public virtual view returns (string memory) {
     return Base64Encoder.encodeSvg(
       AssetBuilder.buildSvg(

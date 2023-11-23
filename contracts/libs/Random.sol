@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.20;
 
+/// @title Random
+/// @author 0xstabby.eth
+/// @notice Libs for (sudo)random number generation
 library Random {
   function random(uint seed, uint256 id, uint256 size) internal pure returns (uint256) {
     uint randomHash = uint(keccak256(abi.encodePacked(id, size, seed)));
