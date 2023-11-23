@@ -1,5 +1,6 @@
 {
   "name": "onchain",
+  "version": "0.1",
   "scripts": {
     "test": "npx hardhat test",
     "coverage": "npx hardhat coverage"
