@@ -27,6 +27,10 @@ abstract contract OnChainTraits {
   string public _symbol;
   string public description;
 
+  /// @notice Initialize metadata with collection values
+  /// @param name_ Name for metadata
+  /// @param symbol_ Symbol for metadata
+  /// @param description_ Description for metadata
   constructor(string memory name_, string memory symbol_, string memory description_) {
     _name = name_;
     _symbol = symbol_;
@@ -35,7 +39,8 @@ abstract contract OnChainTraits {
 
   /// @notice Setup traits and values
   /// @param traits Array of traits to setup
-  function setTraits(OnChainDataStructs.Trait[] memory traits) public {
+  /// @dev Set this in constructor or admin function of implementation
+  function _setTraits(OnChainDataStructs.Trait[] memory traits) internal {
     for (uint i = 0; i < traits.length; ++i) {
       setTraitValues(traits[i].key, traits[i].value);
     }
