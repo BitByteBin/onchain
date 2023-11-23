@@ -16,6 +16,6 @@ contract TEST is OnChainTraits, Ownable {
   }
 
   function reveal(uint _seed) public onlyOwner {
-    _setSeed(_seed);
+    seed = _seed;
   }
 }

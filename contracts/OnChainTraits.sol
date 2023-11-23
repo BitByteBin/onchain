@@ -19,14 +19,9 @@ abstract contract OnChainTraits {
 
   // set this on reveal
   uint public seed;
-
   string public name;
   string public symbol;
   string public description;
-
-  function _setSeed(uint _seed) internal {
-    seed = _seed;
-  }
 
   function setTraits(OnChainDataStructs.Trait[] memory traits) public {
     for (uint i = 0; i < traits.length; ++i) {
