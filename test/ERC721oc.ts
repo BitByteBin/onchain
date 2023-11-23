@@ -7,26 +7,26 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 import { deployFixture } from "./Fixtures";
 
-describe("OnChain Metadata", function () {
+describe("ERC721oc", function () {
   describe("Security", function () {
     it("Should allow owner to reveal", async function () {
-      const { test, owner } = await loadFixture(deployFixture);
+      const { erc721oc, owner } = await loadFixture(deployFixture);
 
-      await expect(test.reveal(420)).not.to.be.revertedWithoutReason();
+      await expect(erc721oc.reveal(420)).not.to.be.revertedWithoutReason();
     });
 
     it("Should not allow non owner to reveal", async function () {
-      const { test, owner, otherAccount } = await loadFixture(deployFixture);
+      const { erc721oc, owner, otherAccount } = await loadFixture(deployFixture);
 
-      await expect(test.connect(otherAccount).reveal(420)).not.to.be.revertedWithoutReason();
+      await expect(erc721oc.connect(otherAccount).reveal(420)).not.to.be.revertedWithoutReason();
     });
   });
 
   describe("TokenURI", function () {
     it("Should set traits and return valid json", async function () {
-      const { test, owner } = await loadFixture(deployFixture);
+      const { erc721oc, owner } = await loadFixture(deployFixture);
 
-      const setTraitsTx = await test.setTraits([
+      const setTraitsTx = await erc721oc.setTraits([
         { key: "Hat", value: "Big Hat" },
         { key: "Hat", value: "No Hat" },
         { key: "Hat", value: "Small Hat" },
@@ -34,12 +34,13 @@ describe("OnChain Metadata", function () {
         { key: "Shirt", value: "No Shirt" },
         { key: "Key", value: "Big Key" },
         { key: "Key", value: "No Key" }
-      ])
+      ]);
+
       await setTraitsTx.wait();
-      console.log("traitTypeCount: ", await test.traitTypeCount(), " should equal ", 4n);
-      console.log("traitValueCount: ", await test.traitValueCount(), " should equal ", 7n);
-      //console.log(await test.getTraits(0));
-      let tokenURI = await test.tokenURI(0);
+      console.log("traitTypeCount: ", await erc721oc.traitTypeCount(), " should equal ", 4n);
+      console.log("traitValueCount: ", await erc721oc.traitValueCount(), " should equal ", 7n);
+      //console.log(await erc721oc.getTraits(0));
+      let tokenURI = await erc721oc.tokenURI(0);
       tokenURI = tokenURI.replace("data:application/json;base64,", "");
       //console.log(tokenURI);
       let data = atob(tokenURI);
@@ -54,6 +55,5 @@ describe("OnChain Metadata", function () {
 
       expect(jsonData.attributes.length).to.gt(0);
     });
-
   });
 });

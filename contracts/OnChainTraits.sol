@@ -19,9 +19,15 @@ abstract contract OnChainTraits {
 
   // set this on reveal
   uint public seed;
-  string public name;
-  string public symbol;
+  string public _name;
+  string public _symbol;
   string public description;
+
+  constructor(string memory name_, string memory symbol_, string memory description_) {
+    _name = name_;
+    _symbol = symbol_;
+    description = description_;
+  }
 
   function setTraits(OnChainDataStructs.Trait[] memory traits) public {
     for (uint i = 0; i < traits.length; ++i) {
@@ -64,7 +70,7 @@ abstract contract OnChainTraits {
       MetadataBuilder.buildMetadata(
         id, getImage(id),
         OnChainDataStructs.Metadata(
-          name,
+          _name,
           description,
           getTraits(id)
         )));
@@ -74,7 +80,7 @@ abstract contract OnChainTraits {
     return Base64Encoder.encodeSvg(
       AssetBuilder.buildSvg(
         OnChainDataStructs.Metadata(
-          name,
+          _name,
           description,
           getTraits(id)
         )));

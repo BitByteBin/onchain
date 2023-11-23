@@ -7,7 +7,7 @@ import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 import {OnChainDataStructs} from "./OnChainDataStructs.sol";
 
 library AssetBuilder {
-  function buildSvg(OnChainDataStructs.Metadata memory metadata) public pure returns (string memory) {
+  function buildSvg(OnChainDataStructs.Metadata memory metadata) internal pure returns (string memory) {
     uint cellSize = 30;
     string memory baseSvg = Constants.BASESVG;
 
