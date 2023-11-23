@@ -20,6 +20,15 @@ describe("ERC721oc", function () {
 
       await expect(erc721oc.connect(otherAccount).reveal(420)).not.to.be.revertedWithoutReason();
     });
+
+    it("Should not allow non owner to setTraits", async function () {
+      const { erc721oc, owner, otherAccount } = await loadFixture(deployFixture);
+
+      await expect(erc721oc.connect(otherAccount).setTraits([{
+        key: "some trait",
+        value: "some value"
+      }])).not.to.be.revertedWithoutReason();
+    });
   });
 
   describe("TokenURI", function () {

@@ -10,10 +10,18 @@ import {OnChainDataStructs} from "../libs/OnChainDataStructs.sol";
 /// @author 0xstabby.eth
 /// @notice ERC721 OnChainTraits implementation
 contract ERC721oc is OnChainTraits, Ownable, ERC721 {
+
+  /// @notice Initialize metadata with collection values
+  /// @param name Name for metadata
+  /// @param symbol Symbol for metadata
+  /// @param description Description for metadata
+  /// @dev Pass name/symbol data to base constructors
   constructor(string memory name, string memory symbol, string memory description)
   Ownable(msg.sender) ERC721(name, symbol)
   OnChainTraits(name, symbol, description) { }
 
+  /// @notice TokenURI returns base64URI metadata with a base64URI image
+  /// @param id Of ERC721
   function tokenURI(uint id) public override view returns (string memory) {
     return getMetadata(id);
   }

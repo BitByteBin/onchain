@@ -49,6 +49,11 @@ const config: HardhatUserConfig = {
       files: ['./contracts', './test/**/*'],
     },
   },
+  docgen: {
+    path: './docs',
+    clear: true,
+    runOnCompile: true,
+  }
 };
 
 export default config;
