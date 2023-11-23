@@ -50,14 +50,11 @@ const config: HardhatUserConfig = {
       files: ['./contracts', './test/**/*'],
     },
   },
-  docgen: {
-    path: './docs',
-    clear: true,
-    runOnCompile: true,
+  markup: {
+    outdir: "./docs",
+    noCompile: false,
+    verbose: false,
   },
-  dodoc: {
-    runOnCompile: true,
-  }
 };
 
 export default config;
