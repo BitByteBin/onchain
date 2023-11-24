@@ -19,13 +19,15 @@ library MetadataBuilder {
       , ' "description": "', metadata.description, '",'
       , ' "attributes": ['));
 
-    for (uint i = 0; i < metadata.traits.length; i++) {
+    uint traitsLength = metadata.traits.length;
+    for (uint i; i < traitsLength;) {
       if (i != 0) {
         dataURI = string(abi.encodePacked(dataURI, ","));
       }
       dataURI = string(abi.encodePacked(dataURI
         , '{ "trait_type": "', metadata.traits[i].key, '",'
         , ' "value": "', metadata.traits[i].value, '" }'));
+      unchecked { ++i; }
     }
 
     dataURI = string(abi.encodePacked(dataURI, '], "image": "'));

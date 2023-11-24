@@ -17,8 +17,9 @@ library AssetBuilder {
     uint cellSize = 30;
     string memory baseSvg = Constants.BASESVG;
 
-    for (uint i = 0; i < metadata.traits.length; i++) {
-      uint x = cellSize + cellSize / 2;
+    uint traitsLength = metadata.traits.length;
+    for (uint i; i < traitsLength;) {
+      uint x = cellSize + cellSize << 2;
       uint y = i * cellSize + cellSize;
       string memory newElement = string(
         abi.encodePacked(
@@ -27,6 +28,7 @@ library AssetBuilder {
           '</text>'
       ));
       baseSvg = string(abi.encodePacked(baseSvg, newElement));
+      unchecked { ++i; }
     }
     return string(abi.encodePacked(baseSvg, Constants.SVGEND));
   }

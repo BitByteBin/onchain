@@ -28,13 +28,13 @@ contract ERC721oc is OnChainTraits, Ownable, ERC721 {
 
   /// @notice Setup traits and values
   /// @param traits Array of traits to setup
-  function setTraits(OnChainDataStructs.Trait[] memory traits) public onlyOwner {
+  function setTraits(OnChainDataStructs.Trait[] memory traits) public payable onlyOwner {
     _setTraits(traits);
   }
 
   /// @notice Reveal function with seed
   /// @param _seed To initialize metadata with
-  function reveal(uint _seed) public onlyOwner {
+  function reveal(uint _seed) public payable onlyOwner {
     seed = _seed;
   }
 }

@@ -281,7 +281,7 @@ function renounceOwnership() external nonpayable
 ### reveal
 
 ```solidity
-function reveal(uint256 _seed) external nonpayable
+function reveal(uint256 _seed) external payable
 ```
 
 Reveal function with seed
@@ -368,7 +368,7 @@ function setApprovalForAll(address operator, bool approved) external nonpayable
 ### setTraits
 
 ```solidity
-function setTraits(OnChainDataStructs.Trait[] traits) external nonpayable
+function setTraits(OnChainDataStructs.Trait[] traits) external payable
 ```
 
 
