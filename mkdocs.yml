@@ -1,6 +1,6 @@
 site_name: OnChain
 nav:
-  - Home: index.md
+  - index_page: ./OnChainTrats.md
   - OnChainTraits: ./OnChainTraits.md
   - ERC721oc: ./reference/ERC721oc.md
   - test:
