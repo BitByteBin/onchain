@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>IERC721Errors - OnChain</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "IERC721Errors";
+        var mkdocs_page_input_path = "@openzeppelin/contracts/interfaces/IERC721Errors.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> OnChain
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../../../index.md">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../OnChainTraits/">OnChainTraits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../../reference/ERC721oc/">ERC721oc</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../test/MinimalTest/">MinimalTest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../test/RandomTest/">RandomTest</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Libs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../libs/AssetBuilder/">AssetBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../libs/MetadataBuilder/">MetadataBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../libs/Base64Encoder/">Base64Encoder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../libs/Random/">Random</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../libs/Constants/">Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../libs/OnChainDataStructs/">OnChainDataStructs</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">OnChain</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">IERC721Errors</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ierc721errors">IERC721Errors</h1>
+<h2 id="overview">Overview</h2>
+<h4 id="license-mit">License: MIT</h4>
+<h2 id="_1"></h2>
+<pre><code class="language-solidity">interface IERC721Errors
+</code></pre>
+<p>Standard ERC721 Errors
+Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC721 tokens.</p>
+<h2 id="errors-info">Errors info</h2>
+<h3 id="erc721invalidowner">ERC721InvalidOwner</h3>
+<pre><code class="language-solidity">error ERC721InvalidOwner(address owner)
+</code></pre>
+<p>Indicates that an address can't be an owner. For example, <code>address(0)</code> is a forbidden owner in EIP-20.
+Used in balance queries.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address of the current owner of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721nonexistenttoken">ERC721NonexistentToken</h3>
+<pre><code class="language-solidity">error ERC721NonexistentToken(uint256 tokenId)
+</code></pre>
+<p>Indicates a <code>tokenId</code> whose <code>owner</code> is the zero address.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">tokenId</td>
+<td style="text-align: left;">uint256</td>
+<td style="text-align: left;">Identifier number of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721incorrectowner">ERC721IncorrectOwner</h3>
+<pre><code class="language-solidity">error ERC721IncorrectOwner(address sender, uint256 tokenId, address owner)
+</code></pre>
+<p>Indicates an error related to the ownership over a particular token. Used in transfers.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">sender</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address whose tokens are being transferred.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tokenId</td>
+<td style="text-align: left;">uint256</td>
+<td style="text-align: left;">Identifier number of a token.</td>
+</tr>
+<tr>
+<td style="text-align: left;">owner</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address of the current owner of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidsender">ERC721InvalidSender</h3>
+<pre><code class="language-solidity">error ERC721InvalidSender(address sender)
+</code></pre>
+<p>Indicates a failure with the token <code>sender</code>. Used in transfers.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">sender</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address whose tokens are being transferred.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidreceiver">ERC721InvalidReceiver</h3>
+<pre><code class="language-solidity">error ERC721InvalidReceiver(address receiver)
+</code></pre>
+<p>Indicates a failure with the token <code>receiver</code>. Used in transfers.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">receiver</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address to which tokens are being transferred.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721insufficientapproval">ERC721InsufficientApproval</h3>
+<pre><code class="language-solidity">error ERC721InsufficientApproval(address operator, uint256 tokenId)
+</code></pre>
+<p>Indicates a failure with the <code>operator</code>’s approval. Used in transfers.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">operator</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address that may be allowed to operate on tokens without being their owner.</td>
+</tr>
+<tr>
+<td style="text-align: left;">tokenId</td>
+<td style="text-align: left;">uint256</td>
+<td style="text-align: left;">Identifier number of a token.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidapprover">ERC721InvalidApprover</h3>
+<pre><code class="language-solidity">error ERC721InvalidApprover(address approver)
+</code></pre>
+<p>Indicates a failure with the <code>approver</code> of a token to be approved. Used in approvals.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">approver</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address initiating an approval operation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erc721invalidoperator">ERC721InvalidOperator</h3>
+<pre><code class="language-solidity">error ERC721InvalidOperator(address operator)
+</code></pre>
+<p>Indicates a failure with the <code>operator</code> to be approved. Used in approvals.</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">operator</td>
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">Address that may be allowed to operate on tokens without being their owner.</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

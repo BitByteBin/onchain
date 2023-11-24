@@ -40,7 +40,7 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                <li class="toctree-l1"><a class="" href="../../index.md">Home</a>
                 </li>
               </ul>
               <ul>
@@ -784,7 +784,7 @@
 </code></pre>
 <p><em>Leaves the contract without owner. It will not be possible to call <code>onlyOwner</code> functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.</em></p>
 <h3 id="reveal">reveal</h3>
-<pre><code class="language-solidity">function reveal(uint256 _seed) external nonpayable
+<pre><code class="language-solidity">function reveal(uint256 _seed) external payable
 </code></pre>
 <p>Reveal function with seed</p>
 <h4 id="parameters_8">Parameters</h4>
@@ -918,7 +918,7 @@
 </tbody>
 </table>
 <h3 id="settraits">setTraits</h3>
-<pre><code class="language-solidity">function setTraits(OnChainDataStructs.Trait[] traits) external nonpayable
+<pre><code class="language-solidity">function setTraits(OnChainDataStructs.Trait[] traits) external payable
 </code></pre>
 <h4 id="parameters_12">Parameters</h4>
 <table>

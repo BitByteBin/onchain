@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>OnChainTraits - OnChain</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "OnChainTraits";
+        var mkdocs_page_input_path = "contracts/OnChainTraits.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> OnChain
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="" href="../../index.md">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../OnChainTraits/">OnChainTraits</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../reference/ERC721oc/">ERC721oc</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">test</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../test/MinimalTest/">MinimalTest</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../test/RandomTest/">RandomTest</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Libs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/AssetBuilder/">AssetBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/MetadataBuilder/">MetadataBuilder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/Base64Encoder/">Base64Encoder</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/Random/">Random</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/Constants/">Constants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../libs/OnChainDataStructs/">OnChainDataStructs</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">OnChain</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">OnChainTraits</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="onchaintraits">OnChainTraits</h1>
+<h2 id="overview">Overview</h2>
+<h4 id="license-unlicensed">License: UNLICENSED</h4>
+<h2 id="_1"></h2>
+<pre><code class="language-solidity">abstract contract OnChainTraits
+</code></pre>
+<p>Author: 0xstabby.eth</p>
+<p>Inherit from this abstract to use on-chain metadata</p>
+<p>Just setTraits, and return getMetadata from tokenURI in implementation</p>
+<h2 id="state-variables-info">State variables info</h2>
+<h3 id="traittypecount-0x89028bcb">traitTypeCount (0x89028bcb)</h3>
+<pre><code class="language-solidity">uint256 traitTypeCount
+</code></pre>
+<h3 id="traitvaluecount-0xa0789c39">traitValueCount (0xa0789c39)</h3>
+<pre><code class="language-solidity">uint256 traitValueCount
+</code></pre>
+<h3 id="seed-0x7d94792a">seed (0x7d94792a)</h3>
+<pre><code class="language-solidity">uint256 seed
+</code></pre>
+<h3 id="_name-0xd28d8852">_name (0xd28d8852)</h3>
+<pre><code class="language-solidity">string _name
+</code></pre>
+<h3 id="_symbol-0xb09f1266">_symbol (0xb09f1266)</h3>
+<pre><code class="language-solidity">string _symbol
+</code></pre>
+<h3 id="description-0x7284e416">description (0x7284e416)</h3>
+<pre><code class="language-solidity">string description
+</code></pre>
+<h2 id="functions-info">Functions info</h2>
+<h3 id="gettraits-0xe1dc0761">getTraits (0xe1dc0761)</h3>
+<pre><code class="language-solidity">function getTraits(
+    uint256 id
+) public view virtual returns (OnChainDataStructs.Trait[] memory)
+</code></pre>
+<p>Get traits for id</p>
+<p>Can be overridden</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">uint256</td>
+<td style="text-align: left;">To grab traits for</td>
+</tr>
+</tbody>
+</table>
+<p>Return values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[0]</td>
+<td style="text-align: left;">struct OnChainDataStructs.Trait[]</td>
+<td style="text-align: left;">Array of Traits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getmetadata-0xa574cea4">getMetadata (0xa574cea4)</h3>
+<pre><code class="language-solidity">function getMetadata(uint256 id) public view virtual returns (string memory)
+</code></pre>
+<p>Get metadata for id</p>
+<p>Can be overridden</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">uint256</td>
+<td style="text-align: left;">To grab metadata for</td>
+</tr>
+</tbody>
+</table>
+<p>Return values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[0]</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">String of base64 encoded metadata</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getimage-0x2607aafa">getImage (0x2607aafa)</h3>
+<pre><code class="language-solidity">function getImage(uint256 id) public view virtual returns (string memory)
+</code></pre>
+<p>Get image</p>
+<p>Can be overridden</p>
+<p>Parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">uint256</td>
+<td style="text-align: left;">To get image for</td>
+</tr>
+</tbody>
+</table>
+<p>Return values:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">[0]</td>
+<td style="text-align: left;">string</td>
+<td style="text-align: left;">String of base64 encoded svg</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
