@@ -150,7 +150,7 @@ function seed() external view returns (uint256)
 function tokenURI(uint256 id) external view returns (string)
 ```
 
-
+TokenURI returns base64URI metadata with a base64URI image
 
 
 
@@ -158,7 +158,7 @@ function tokenURI(uint256 id) external view returns (string)
 
 | Name | Type | Description |
 |---|---|---|
-| id | uint256 | undefined |
+| id | uint256 | Of ERC721 |
 
 #### Returns
 

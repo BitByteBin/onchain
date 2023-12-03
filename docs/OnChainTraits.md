@@ -25,7 +25,7 @@ function _name() external view returns (string)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | string | undefined |
+| _0 | string | Name for metadata |
 
 ### _symbol
 
@@ -42,7 +42,7 @@ function _symbol() external view returns (string)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | string | undefined |
+| _0 | string | Symbol for metadata |
 
 ### description
 
@@ -59,7 +59,7 @@ function description() external view returns (string)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | string | undefined |
+| _0 | string | Description for metadata |
 
 ### getImage
 
@@ -142,7 +142,7 @@ function seed() external view returns (uint256)
 
 | Name | Type | Description |
 |---|---|---|
-| _0 | uint256 | undefined |
+| _0 | uint256 | Seed for setting traits on reveal |
 
 ### traitTypeCount
 

@@ -1,11 +1,17 @@
-import { HardhatUserConfig } from "hardhat/config";
+import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-gas-reporter";
 import 'hardhat-docgen';
 import "@solarity/hardhat-markup";
 import 'hardhat-watcher';
 import '@primitivefi/hardhat-dodoc';
+import { exec } from 'child_process';
 require("dotenv").config();
+
+task("mkdocs", "runs mkdocs build to generate docs site based off docs markup")
+  .setAction(async () => {
+    const { stdout, stderr } = await exec('mkdocs build');
+  });
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -37,7 +43,7 @@ const config: HardhatUserConfig = {
       verbose: true
     },
     test: {
-      tasks: ['test'],
+      tasks: ['test', 'mkdocs'],
       files: ['./contracts', './test/**/*'],
       verbose: true,
       runOnLaunch: true

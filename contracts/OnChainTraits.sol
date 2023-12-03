@@ -22,9 +22,13 @@ abstract contract OnChainTraits {
   bool private init;
 
   // set this on reveal
+  /// @return Seed for setting traits on reveal
   uint public seed;
+  /// @return Name for metadata
   string public _name;
+  /// @return Symbol for metadata
   string public _symbol;
+  /// @return Description for metadata
   string public description;
 
   /// @notice Initialize metadata with collection values
