@@ -10,7 +10,7 @@ require("dotenv").config();
 
 task("mkdocs", "runs mkdocs build to generate docs site based off docs markup")
   .setAction(async () => {
-    const { stdout, stderr } = await exec('mkdocs build');
+    const { stdout, stderr } = await exec('mkdocs build && cp README.md site/index.md');
   });
 
 const config: HardhatUserConfig = {
