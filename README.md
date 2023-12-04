@@ -33,10 +33,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">onchain</h3>
+<h3 align="center">@BitByteBin/onchain</h3>
 
   <p align="center">
-    project_description
+    @BitByteBin/onchain is a collection of contracts and examples for creating onchain metadata and images
     <br />
     <a href="https://github.com/BitByteBin/onchain"><strong>Explore the docs »</strong></a>
     <br />
@@ -52,6 +52,7 @@
 
 
 <!-- TABLE OF CONTENTS -->
+<!--
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -61,7 +62,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -70,9 +70,10 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!--<li><a href="#acknowledgments">Acknowledgments</a></li>-->
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+-->
 
 
 
@@ -81,7 +82,7 @@
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `BitByteBin`, `onchain`, `BitByteBin`, `email_client`, `email`, `onchain`, `project_description`
+@BitByteBin/onchain is a collection of contracts and examples for creating onchain metadata and images
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,16 +94,19 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
+1. Install with npm or yarn
+
+```shell
+npm install @BitByteBin/onchain
+```
+or
+```shell
+yarn add @BitByteBin/onchain
+```
+
+<!--
 1. Clone the repo
    ```sh
    git clone https://github.com/BitByteBin/onchain.git
@@ -111,35 +115,53 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-3. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
+<!--
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+AVAILABLE TASKS:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+npx hardhat
+npx hardhat
 npx hardhat node
 npx hardhat run scripts/deploy.ts
 ```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+* `check`             	Check whatever you need
+* `clean`             	Clears the cache and deletes all artifacts
+* `compile`           	Compiles the entire project, building all artifacts
+* `console`           	Opens a hardhat console
+* `coverage`          	Generates a code coverage report for tests
+* `docgen`            	Generate NatSpec documentation automatically on compilation
+* `dodoc`             	Generates NatSpec documentation for the project
+* `flatten`           	Flattens and prints contracts and their dependencies. If no file is passed, all the contracts in the project will be flattened.
+* `gas-reporter:merge`	
+* `help`              	Prints this message
+* `markup`            	Generate markups for compiled contracts
+* `mkdocs`            	runs mkdocs build to generate docs site based off docs markup
+* `node`              	Starts a JSON-RPC server on top of Hardhat Network
+* `run`               	Runs a user-defined script after compiling the project
+* `test`              	Runs mocha tests
+* `typechain`         	Generate Typechain typings for compiled contracts
+* `verify`            	Verifies a contract on Etherscan or Sourcify
+* `watch`             	Start the file watcher
+-->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!--_For more examples, please refer to the [Documentation](https://example.com)_-->
+
+<!--<p align="right">(<a href="#readme-top">back to top</a>)</p>-->
 
 
 
 <!-- ROADMAP -->
+<!--
 ## Roadmap
 
 - [ ] Feature 1
@@ -150,6 +172,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/BitByteBin/onchain/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+-->
 
 
 

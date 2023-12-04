@@ -12,7 +12,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Home";
+        var mkdocs_page_name = "Getting Started";
         var mkdocs_page_input_path = "index.md";
         var mkdocs_page_url = null;
       </script>
@@ -39,6 +39,12 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Getting Started</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="OnChainTraits/">OnChainTraits</a>
                 </li>
@@ -83,7 +89,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Home</li>
+      <li class="breadcrumb-item active">Getting Started</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -122,10 +128,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">onchain</h3>
+<h3 align="center">@BitByteBin/onchain</h3>
 
   <p align="center">
-    project_description
+    @BitByteBin/onchain is a collection of contracts and examples for creating onchain metadata and images
     <br />
     <a href="https://github.com/BitByteBin/onchain"><strong>Explore the docs »</strong></a>
     <br />
@@ -139,6 +145,7 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
+<!--
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -148,7 +155,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -157,64 +163,95 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <!--<li><a href="#acknowledgments">Acknowledgments</a></li>-->
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+-->
 
 <!-- ABOUT THE PROJECT -->
 <h2 id="about-the-project">About The Project</h2>
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
-<p>Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: <code>BitByteBin</code>, <code>onchain</code>, <code>BitByteBin</code>, <code>email_client</code>, <code>email</code>, <code>onchain</code>, <code>project_description</code></p>
+<p>@BitByteBin/onchain is a collection of contracts and examples for creating onchain metadata and images</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 <h2 id="getting-started">Getting Started</h2>
 <p>This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.</p>
-<h3 id="prerequisites">Prerequisites</h3>
-<p>This is an example of how to list things you need to use the software and how to install them.
-* npm
-  <code>sh
-  npm install npm@latest -g</code></p>
 <h3 id="installation">Installation</h3>
 <ol>
-<li>Clone the repo
-   <code>sh
-   git clone https://github.com/BitByteBin/onchain.git</code></li>
-<li>Install NPM packages
-   <code>sh
-   npm install</code></li>
-<li>Enter your API in <code>config.js</code>
-   <code>js
-   const API_KEY = 'ENTER YOUR API';</code></li>
+<li>Install with npm or yarn</li>
 </ol>
+<pre><code class="language-shell">npm install @BitByteBin/onchain
+</code></pre>
+<p>or</p>
+<pre><code class="language-shell">yarn add @BitByteBin/onchain
+</code></pre>
+<!--
+1. Clone the repo
+   ```sh
+   git clone https://github.com/BitByteBin/onchain.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+-->
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
-<h2 id="usage">Usage</h2>
-<p>Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.</p>
-<pre><code class="language-shell">npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+<!--
+## Usage
+
+AVAILABLE TASKS:
+
+
+<pre><code class="language-shell">npx hardhat
+npx hardhat
 npx hardhat node
 npx hardhat run scripts/deploy.ts
 </code></pre>
-<p><em>For more examples, please refer to the <a href="https://example.com">Documentation</a></em></p>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+* `check`               Check whatever you need
+* `clean`               Clears the cache and deletes all artifacts
+* `compile`             Compiles the entire project, building all artifacts
+* `console`             Opens a hardhat console
+* `coverage`            Generates a code coverage report for tests
+* `docgen`              Generate NatSpec documentation automatically on compilation
+* `dodoc`               Generates NatSpec documentation for the project
+* `flatten`             Flattens and prints contracts and their dependencies. If no file is passed, all the contracts in the project will be flattened.
+* `gas-reporter:merge`  
+* `help`                Prints this message
+* `markup`              Generate markups for compiled contracts
+* `mkdocs`              runs mkdocs build to generate docs site based off docs markup
+* `node`                Starts a JSON-RPC server on top of Hardhat Network
+* `run`                 Runs a user-defined script after compiling the project
+* `test`                Runs mocha tests
+* `typechain`           Generate Typechain typings for compiled contracts
+* `verify`              Verifies a contract on Etherscan or Sourcify
+* `watch`               Start the file watcher
+-->
+
+<!--_For more examples, please refer to the [Documentation](https://example.com)_-->
+
+<!--<p align="right">(<a href="#readme-top">back to top</a>)</p>-->
 
 <!-- ROADMAP -->
-<h2 id="roadmap">Roadmap</h2>
-<ul>
-<li>[ ] Feature 1</li>
-<li>[ ] Feature 2</li>
-<li>[ ] Feature 3<ul>
-<li>[ ] Nested Feature</li>
-</ul>
-</li>
-</ul>
-<p>See the <a href="https://github.com/BitByteBin/onchain/issues">open issues</a> for a full list of proposed features (and known issues).</p>
+<!--
+## Roadmap
+
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+    - [ ] Nested Feature
+
+See the [open issues](https://github.com/BitByteBin/onchain/issues) for a full list of proposed features (and known issues).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+-->
 
 <!-- CONTRIBUTING -->
 <h2 id="contributing">Contributing</h2>
@@ -258,6 +295,9 @@ Don't forget to give the project a star! Thanks again!</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="OnChainTraits/" class="btn btn-neutral float-right" title="OnChainTraits">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -280,6 +320,8 @@ Don't forget to give the project a star! Thanks again!</p>
     
     
     
+      <span><a href="OnChainTraits/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
   </span>
 </div>
     <script src="js/jquery-3.6.0.min.js"></script>
@@ -298,5 +340,5 @@ Don't forget to give the project a star! Thanks again!</p>
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2023-12-03 18:22:15.631865+00:00
+Build Date UTC : 2023-12-04 01:00:15.322724+00:00
 -->
