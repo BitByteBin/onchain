@@ -44,7 +44,7 @@ const config: HardhatUserConfig = {
     },
     test: {
       tasks: ['test', 'mkdocs'],
-      files: ['./contracts', './test/**/*'],
+      files: ['./contracts', './test/**/*', 'README.md'],
       verbose: true,
       runOnLaunch: true
     },
