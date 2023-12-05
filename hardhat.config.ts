@@ -58,6 +58,7 @@ const config: HardhatUserConfig = {
   },
   markup: {
     outdir: "./docs",
+    onlyFiles: ["./contracts/**/*"],
     noCompile: false,
     verbose: false,
   },

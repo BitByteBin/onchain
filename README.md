@@ -33,10 +33,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">@BitByteBin/onchain</h3>
+<h3 align="center">@bitbytebin/onchain</h3>
 
   <p align="center">
-    @BitByteBin/onchain is a collection of contracts and examples for creating onchain metadata and images
+    @bitbytebin/onchain is a collection of contracts and examples for creating onchain metadata and images
     <br />
     <a href="https://github.com/BitByteBin/onchain"><strong>Explore the docs »</strong></a>
     <br />
@@ -82,7 +82,7 @@
 
 <!--[![Product Name Screen Shot][product-screenshot]](https://example.com)-->
 
-@BitByteBin/onchain is a collection of contracts and examples for creating onchain metadata and images
+@bitbytebin/onchain is a collection of contracts and examples for creating onchain metadata and images
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -99,11 +99,11 @@ To get a local copy up and running follow these simple example steps.
 1. Install with npm or yarn
 
 ```shell
-npm install @BitByteBin/onchain
+npm install @bitbytebin/onchain
 ```
 or
 ```shell
-yarn add @BitByteBin/onchain
+yarn add @bitbytebin/onchain
 ```
 
 <!--
