@@ -19,8 +19,6 @@ abstract contract OnChainTraits {
   uint public traitValueCount;
   mapping (uint => string) traitValues;
 
-  bool private init;
-
   // set this on reveal
   /// @return Seed for setting traits on reveal
   uint public seed;
@@ -56,14 +54,9 @@ abstract contract OnChainTraits {
   /// @param traitType Type of Trait to set
   /// @param traitValue Value of Trait to set
   function setTraitValues(string memory traitType, string memory traitValue) internal {
-    if (!init) {
-      init = true;
-    }
     bool isNewTrait = traitIds[traitType] == 0;
-    bool isNewTraitArray;
-    if (isNewTrait && init) {
+    if (isNewTrait) {
       unchecked { ++traitTypeCount; }
-      isNewTraitArray = traitValueIds[traitIds[traitType]].length == 0;
       traitIds[traitType] = traitTypeCount;
       traitTypes[traitTypeCount] = traitType;
     }
@@ -78,7 +71,6 @@ abstract contract OnChainTraits {
   /// @dev Can be overridden
   /// @return Array of Traits
   function getTraits(uint id) public virtual view returns (OnChainDataStructs.Trait[] memory) {
-    // this is currently still wrong, returning all traits instead of just one per slot
     OnChainDataStructs.Trait[] memory result = new OnChainDataStructs.Trait[](traitTypeCount);
     uint traitTypeCountOffset = traitTypeCount + 1;
     for (uint i = 1; i < traitTypeCountOffset;) {
