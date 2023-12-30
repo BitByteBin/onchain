@@ -3,6 +3,7 @@
   "version": "0.0.0-beta.1",
   "description": "onchain metadata/images solidity lib",
   "author": "0xstabby",
+  "license": "MIT",
   "files": [
     "/contracts/**/*.sol",
     "/artifacts/contracts/**/*.json",
