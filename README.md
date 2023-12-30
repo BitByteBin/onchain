@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/BitByteBin/onchain">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://avatars.githubusercontent.com/u/91977689?s=200&v=4" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">@bitbytebin/onchain</h3>
