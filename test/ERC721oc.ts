@@ -35,19 +35,23 @@ describe("ERC721oc", function () {
     it("Should set traits and return valid json", async function () {
       const { erc721oc, owner } = await loadFixture(deployFixture);
 
-      const setTraitsTx = await erc721oc.setTraits([
+
+      const traits = [
         { key: "Hat", value: "Big Hat" },
         { key: "Hat", value: "No Hat" },
         { key: "Hat", value: "Small Hat" },
         { key: "Shoes", value: "No Shoes" },
         { key: "Shirt", value: "No Shirt" },
         { key: "Key", value: "Big Key" },
-        { key: "Key", value: "No Key" }
-      ]);
+        { key: "Species", value: "Dragon" },
+        { key: "Species", value: "Kitty" },
+        { key: "Species", value: "Doggy" },
+      ];
+      const setTraitsTx = await erc721oc.setTraits(traits);
 
       await setTraitsTx.wait();
-      console.log("traitTypeCount: ", await erc721oc.traitTypeCount(), " should equal ", 4n);
-      console.log("traitValueCount: ", await erc721oc.traitValueCount(), " should equal ", 7n);
+      expect(await erc721oc.traitTypeCount()).to.eq(5);
+      expect(await erc721oc.traitValueCount()).to.eq(traits.length);
       //console.log(await erc721oc.getTraits(0));
       let tokenURI = await erc721oc.tokenURI(0);
       tokenURI = tokenURI.replace("data:application/json;base64,", "");

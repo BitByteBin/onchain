@@ -62,10 +62,10 @@ abstract contract OnChainTraits {
     bool isNewTrait = traitIds[traitType] == 0;
     bool isNewTraitArray;
     if (isNewTrait && init) {
+      unchecked { ++traitTypeCount; }
       isNewTraitArray = traitValueIds[traitIds[traitType]].length == 0;
       traitIds[traitType] = traitTypeCount;
       traitTypes[traitTypeCount] = traitType;
-      unchecked { ++traitTypeCount; }
     }
 
     traitValueIds[traitIds[traitType]].push(traitValueCount);
@@ -80,8 +80,9 @@ abstract contract OnChainTraits {
   function getTraits(uint id) public virtual view returns (OnChainDataStructs.Trait[] memory) {
     // this is currently still wrong, returning all traits instead of just one per slot
     OnChainDataStructs.Trait[] memory result = new OnChainDataStructs.Trait[](traitTypeCount);
-    for (uint i; i < traitTypeCount;) {
-      result[i] =
+    uint traitTypeCountOffset = traitTypeCount + 1;
+    for (uint i = 1; i < traitTypeCountOffset;) {
+      result[i - 1] =
         OnChainDataStructs.Trait(traitTypes[i], traitValues[traitValueIds[i][
           Random.random(seed, id, traitValueIds[i].length)
         ]]);
