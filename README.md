@@ -38,11 +38,9 @@
   <p align="center">
     @bitbytebin/onchain is a collection of contracts and examples for creating onchain metadata and images
     <br />
-    <a href="https://github.com/BitByteBin/onchain"><strong>Explore the docs »</strong></a>
+    <a href="https://bitbytebin.github.io/onchain/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BitByteBin/onchain">View Demo</a>
-    ·
     <a href="https://github.com/BitByteBin/onchain/issues">Report Bug</a>
     ·
     <a href="https://github.com/BitByteBin/onchain/issues">Request Feature</a>
@@ -91,9 +89,6 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Installation
 
 1. Install with npm or yarn
@@ -106,57 +101,20 @@ or
 yarn add @bitbytebin/onchain
 ```
 
-<!--
-1. Clone the repo
-   ```sh
-   git clone https://github.com/BitByteBin/onchain.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
--->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- USAGE EXAMPLES -->
-<!--
 ## Usage
 
-AVAILABLE TASKS:
+Checkout the reference <a href="https://github.com/BitByteBin/onchain/blob/master/contracts/reference/ERC721oc.sol">ERC721oc</a> for a basic usage example
 
-```shell
-npx hardhat
-npx hardhat
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
-
-* `check`             	Check whatever you need
-* `clean`             	Clears the cache and deletes all artifacts
-* `compile`           	Compiles the entire project, building all artifacts
-* `console`           	Opens a hardhat console
-* `coverage`          	Generates a code coverage report for tests
-* `docgen`            	Generate NatSpec documentation automatically on compilation
-* `dodoc`             	Generates NatSpec documentation for the project
-* `flatten`           	Flattens and prints contracts and their dependencies. If no file is passed, all the contracts in the project will be flattened.
-* `gas-reporter:merge`	
-* `help`              	Prints this message
-* `markup`            	Generate markups for compiled contracts
-* `mkdocs`            	runs mkdocs build to generate docs site based off docs markup
-* `node`              	Starts a JSON-RPC server on top of Hardhat Network
-* `run`               	Runs a user-defined script after compiling the project
-* `test`              	Runs mocha tests
-* `typechain`         	Generate Typechain typings for compiled contracts
-* `verify`            	Verifies a contract on Etherscan or Sourcify
-* `watch`             	Start the file watcher
--->
+Or the <a href="https://github.com/BitByteBin/onchain/blob/master/contracts/OnChainTraits.sol">OnChainTraits</a> contract the ERC721oc inherits
 
 <!--_For more examples, please refer to the [Documentation](https://example.com)_-->
 
-<!--<p align="right">(<a href="#readme-top">back to top</a>)</p>-->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -174,8 +132,6 @@ See the [open issues](https://github.com/BitByteBin/onchain/issues) for a full l
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 -->
 
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -188,7 +144,47 @@ Don't forget to give the project a star! Thanks again!
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+5. <a href="https://github.com/BitByteBin/onchain/compare">Open a Pull Request</a>
+
+### Dev notes
+
+#### Build
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/BitByteBin/onchain.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+
+#### Hardhat Tasks
+
+- $ `npx hardhat <command>`
+- <a href="https://hardhat.org/hardhat-runner/docs/guides/command-line-completion">(hh)</a> $ `hh <command>`
+
+```
+check               -- Check whatever you need
+clean               -- Clears the cache and deletes all artifacts
+compile             -- Compiles the entire project, building all artifacts
+console             -- Opens a hardhat console
+coverage            -- Generates a code coverage report for tests
+docgen              -- Generate NatSpec documentation automatically on compilation
+dodoc               -- Generates NatSpec documentation for the project
+flatten             -- Flattens and prints contracts and their dependencies. If no file is passed, all the contracts in the project will be flattened.
+help                -- Prints this message
+markup              -- Generate markups for compiled contracts
+mkdocs              -- runs mkdocs build to generate docs site based off docs markup
+node                -- Starts a JSON-RPC server on top of Hardhat Network
+run                 -- Runs a user-defined script after compiling the project
+test                -- Runs mocha tests
+typechain           -- Generate Typechain typings for compiled contracts
+verify              -- Verifies a contract on Etherscan or Sourcify
+watch               -- Start the file watcher
+gas-reporter:merge
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

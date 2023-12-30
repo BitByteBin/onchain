@@ -1,6 +1,6 @@
 {
   "name": "@bitbytebin/onchain",
-  "version": "0.0.0-beta.4",
+  "version": "0.0.0-beta.5",
   "description": "onchain metadata/images solidity lib",
   "author": "0xstabby",
   "license": "MIT",
@@ -15,6 +15,18 @@
     "test": "npx hardhat test",
     "coverage": "npx hardhat coverage"
   },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "metadata",
+    "images",
+    "base64",
+    "erc721",
+    "erc721oc",
+    "nft"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/BitByteBin/onchain.git"
