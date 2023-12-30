@@ -45,7 +45,7 @@ abstract contract OnChainTraits {
   function _setTraits(OnChainDataStructs.Trait[] memory traits) internal {
     uint traitsLength = traits.length;
     for (uint i; i < traitsLength;) {
-      setTraitValues(traits[i].key, traits[i].value);
+      _setTraitValues(traits[i].key, traits[i].value);
       unchecked { ++i; }
     }
   }
@@ -53,7 +53,7 @@ abstract contract OnChainTraits {
   /// @notice Set individual trait with value
   /// @param traitType Type of Trait to set
   /// @param traitValue Value of Trait to set
-  function setTraitValues(string memory traitType, string memory traitValue) internal {
+  function _setTraitValues(string memory traitType, string memory traitValue) internal {
     if (traitIds[traitType] == 0) {
       unchecked { ++traitTypeCount; }
       traitIds[traitType] = traitTypeCount;
