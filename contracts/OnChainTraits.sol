@@ -54,8 +54,7 @@ abstract contract OnChainTraits {
   /// @param traitType Type of Trait to set
   /// @param traitValue Value of Trait to set
   function setTraitValues(string memory traitType, string memory traitValue) internal {
-    bool isNewTrait = traitIds[traitType] == 0;
-    if (isNewTrait) {
+    if (traitIds[traitType] == 0) {
       unchecked { ++traitTypeCount; }
       traitIds[traitType] = traitTypeCount;
       traitTypes[traitTypeCount] = traitType;
